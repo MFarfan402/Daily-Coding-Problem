@@ -23,8 +23,8 @@ for (var i = 0; (i < array.length - 1) && (!finded); i++)
     {
         if (array[i] + array[j] == constant) 
         {
-            console.log(array[i] + " + " + array[j] + " = "  + (array[i] + array[j]));
             finded = true;
+            console.log(true);
         }
     }
 }
