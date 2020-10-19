@@ -9,23 +9,56 @@
  * 
  * Author: Mauricio Farfan
  * Asked on: 17/10/2020
- * Completed: 17/10/2020
- * Time elapsed: ?? mins. < 25 mins
+ * Completed: 18/10/2020
+ * Time elapsed: 90 mins. 
+ * 
+ * Modified (19/10/2020): Added in on iteration.
  */
 
 var array = [-1, 2, 4, 8, 16, 32];
-var constant = 13;
-var finded = false;
+var constant = 8;
 
-for (var i = 0; (i < array.length - 1) && (!finded); i++) 
+// This solution is too slow. O((n-1)^2)
+console.log(lookForSumSlower(array, constant));
+
+// This solution is faster. O(n)
+console.log(lookForSum(array, constant))
+
+
+function lookForSum(array, constant)
 {
-    for (var j = i + 1; (j < array.length) && (!finded); j++) 
+    let lookedNumbers = [array[0]];
+    let difference;
+    for (var i = 1; i < array.length; i++)
     {
-        if (array[i] + array[j] == constant) 
+        difference = constant - array[i];
+        if (recursiveBinarySearch(lookedNumbers, difference, 0, lookedNumbers.length))
+            return true;
+        else
+            lookedNumbers.push(array[i]);
+    }
+    return false;
+}
+
+function recursiveBinarySearch(lookedNumbers, number, startIndex, endIndex)
+{
+    if (startIndex > endIndex) return false;
+    let middleIndex = Math.floor((endIndex + startIndex) / 2);
+    if (lookedNumbers[middleIndex] == number) return true;
+    if (lookedNumbers[middleIndex] > number) 
+        return recursiveBinarySearch(lookedNumbers, number, startIndex, middleIndex - 1);
+    else 
+        return recursiveBinarySearch(lookedNumbers, number, middleIndex + 1, endIndex);
+}
+
+function lookForSumSlower(array, constant)
+{
+    for (let i = 0; (i < array.length - 1); i++) 
+    {
+        for (let j = i + 1; (j < array.length); j++) 
         {
-            finded = true;
-            console.log(true);
+            if (array[i] + array[j] == constant) return true;
         }
     }
+    return false;
 }
-if (!finded) console.log(finded);
