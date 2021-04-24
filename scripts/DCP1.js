@@ -18,11 +18,13 @@
 var array = [-1, 2, 4, 8, 16, 32];
 var constant = 8;
 
-// This solution is too slow. O((n-1)^2)
-console.log(lookForSumSlower(array, constant));
+const run = () => {
+    // This solution is too slow. O((n-1)^2)
+    console.log(lookForSumSlower(array, constant));
 
-// This solution is faster. O(n)
-console.log(lookForSum(array, constant))
+    // This solution is faster. O(n)
+    console.log(lookForSum(array, constant));
+}
 
 
 function lookForSum(array, constant)
@@ -62,3 +64,7 @@ function lookForSumSlower(array, constant)
     }
     return false;
 }
+
+module.exports = {
+    run,
+};

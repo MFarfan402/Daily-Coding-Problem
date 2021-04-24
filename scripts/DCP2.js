@@ -17,15 +17,17 @@
 
 let array= [2, -10, 0, -4, 1, 0];
 
+const run = () => {
+    
+    // This is the solution without using divisions in the process.
+    // Personaly I don't like this solution because is more expensive.
+    // The solution is O(n^2).
+    console.log(solutionWithoutDivision(array));
 
-// This is the solution without using divisions in the process.
-// Personaly I don't like this solution because is more expensive.
-// The solution is O(n^2).
-console.log(solutionWithoutDivision(array))
-
-// Also this could be a good solution.
-// The solution is O(2n).
-console.log(solutionWithDivision(array))
+    // Also this could be a good solution.
+    // The solution is O(2n).
+    console.log(solutionWithDivision(array));
+};
 
 
 function solutionWithoutDivision(array)
@@ -78,3 +80,7 @@ function solutionWithDivision(array)
     }
         
 }
+
+module.exports = {
+    run,
+};

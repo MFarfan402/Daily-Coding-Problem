@@ -11,14 +11,16 @@
  * Completed: 31/10/2020
  */
 
-let solved = false;
+const run = () => {
+    let solved = false;
 
-while(!solved)
-{
-    let aproximation = MonteCarloAproximation(100000).toFixed(3);
-    console.log(aproximation);
+    while(!solved)
+    {
+        let aproximation = MonteCarloAproximation(100000).toFixed(3);
+        console.log(aproximation);
 
-    if (aproximation == 3.141) solved = true;
+        if (aproximation == 3.141) solved = true;
+    }
 }
 
 function MonteCarloAproximation (items)
@@ -37,3 +39,6 @@ function MonteCarloAproximation (items)
     return 4 * inCircle / items;
 }
 
+module.exports = {
+    run,
+};

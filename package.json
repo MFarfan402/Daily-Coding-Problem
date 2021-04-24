@@ -1,0 +1,20 @@
+{
+  "name": "dcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MFarfan402/Daily-Coding-Problem.git"
+  },
+  "author": "Mauricio Farfan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MFarfan402/Daily-Coding-Problem/issues"
+  },
+  "homepage": "https://github.com/MFarfan402/Daily-Coding-Problem#readme",
+  "description": ""
+}
